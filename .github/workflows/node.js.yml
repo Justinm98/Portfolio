@@ -29,4 +29,4 @@ jobs:
       run: ng build --aot --optimization --progress=false
 
     - name: test
-      run: ng test --code-coverage=true --watch=false --progress=false --browser=ChromeHeadless --no-sandbox
+      run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
