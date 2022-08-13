@@ -30,3 +30,6 @@ jobs:
 
     - name: test
       run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
+
+    - name: lint
+      run: ng lint
