@@ -26,7 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - npm install -g @angular/cli
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-    - run: npm lint
+    - run: ng lint
+    - run: ng build --aot --optimization --progress=false
+    - run: ng test --code-coverage=true --watcch=false
