@@ -30,4 +30,4 @@ jobs:
     - run: npm ci
     - run: ng lint
     - run: ng build --aot --optimization --progress=false
-    - run: ng test --code-coverage=true --watcch=false
+    - run: ng test --code-coverage=true --watch=false
