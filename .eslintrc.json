@@ -36,6 +36,26 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "new-cap": [
+          "error", {
+            "capIsNew": true,
+            "capIsNewExceptions": [
+              "Component",
+              "Directive",
+              "HostBinding",
+              "HostListener",
+              "Injectable",
+              "Input",
+              "NgModule",
+              "Output",
+              "Pipe",
+              "ViewChild",
+              "ViewChildren"
+            ],
+            "newIsCap": true,
+            "properties": true
+          }
         ]
       }
     },
