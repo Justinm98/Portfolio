@@ -17,11 +17,13 @@ jobs:
         node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
-    - name: install
+    - name: cache
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: install
       run: |
         npm ci
         npm install -g @angular/cli
