@@ -1,0 +1,5 @@
+@use '@angular/material' as mat;
+
+.tool-bar {
+  @include mat.elevation(4);
+}

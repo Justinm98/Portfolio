@@ -1,4 +1,9 @@
-<mat-toolbar>
-  <span>My Application</span>
+<mat-toolbar class="tool-bar">
+  <button mat-fab *ngIf="isDarkMode()" (click)="switchTheme()">
+    <mat-icon>dark_mode</mat-icon>
+  </button>
+  <button mat-fab *ngIf="isLightMode()" (click)="switchTheme()">
+    <mat-icon>light_mode</mat-icon>
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
