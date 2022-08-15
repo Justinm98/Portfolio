@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+
+.info-card {
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  @include mat.elevation(4);
+}

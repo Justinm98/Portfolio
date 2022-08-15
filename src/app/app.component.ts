@@ -9,40 +9,46 @@ import {Component} from '@angular/core';
  * AppComponent
  */
 export class AppComponent {
-  DARK_MODE: string = 'dark-mode';
-  LIGHT_MODE: string = 'light-mode';
-  currentTheme: string = this.DARK_MODE;
+  LIGHT_THEME_CLASS: string = 'theme-alternate';
 
   /**
    * Switches app theme to the opposite of current theme
    */
   public switchTheme() {
-    const nextTheme: string = this.getOppositeTheme();
-    this.currentTheme = nextTheme;
-    document.body.className = nextTheme;
+    if (this.isCurrentThemeLight()) {
+      this.enableDarkTheme();
+    } else {
+      this.enableLightTheme();
+    }
   }
 
   /**
-   * returns the opposite theme string
-   * @return {string} the opposite of the current theme. dark-mode or light-mode
+   * Checks if light theme class in applied to document body
+   * @return {boolean} true if light theme is in body class list
    */
-  private getOppositeTheme(): string {
-    return this.currentTheme === this.DARK_MODE ? this.LIGHT_MODE : this.DARK_MODE;
+  public isCurrentThemeLight(): boolean {
+    return document.body.classList.contains(this.LIGHT_THEME_CLASS);
   }
 
   /**
-   * checks if current theme is dark mode
-   * @return {boolean} true if current theme is dark mode
+   * Checks if light theme class in applied to document body
+   * @return {boolean} true if light theme is in body class list
    */
-  public isDarkMode(): boolean {
-    return this.currentTheme === this.DARK_MODE;
+  public isCurrentThemeDark(): boolean {
+    return !document.body.classList.contains(this.LIGHT_THEME_CLASS);
   }
 
   /**
-   * checks if current theme is light mode
-   * @return {boolean} true if current theme is light mode
+   * Removes light theme from body class list to enable dark theme
    */
-  public isLightMode(): boolean {
-    return this.currentTheme === this.LIGHT_MODE;
+  private enableDarkTheme() {
+    document.body.classList.remove(this.LIGHT_THEME_CLASS);
+  }
+
+  /**
+   * Adds light theme to body class list to enable light theme
+   */
+  private enableLightTheme() {
+    document.body.classList.add(this.LIGHT_THEME_CLASS);
   }
 }
