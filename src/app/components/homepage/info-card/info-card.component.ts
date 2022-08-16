@@ -1,12 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-info-card',
   templateUrl: './info-card.component.html',
   styleUrls: ['./info-card.component.scss'],
 })
-export class InfoCardComponent implements OnInit {
+/**
+ * InfoCardComponent
+ */
+export class InfoCardComponent {
+  /**
+   * constructor
+   */
   constructor() {}
-
-  ngOnInit(): void {}
 }

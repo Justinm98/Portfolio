@@ -6,6 +6,9 @@
 
 @use '@angular/material' as mat;
 
+// Custom component themes
+@use './app/components/homepage/info-card/info-card-theme' as infoCard;
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 
@@ -235,9 +238,11 @@ $altTheme: (
 
 // Theme Init
 @include mat.all-component-themes($theme);
+@include infoCard.theme($theme);
 
 .theme-alternate {
   @include mat.all-component-themes($altTheme);
+  //@include infoCard.theme($altTheme);
 }
 
 // Specific component overrides, pieces that are not in line with the general theming
