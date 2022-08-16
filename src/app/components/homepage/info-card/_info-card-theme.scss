@@ -12,7 +12,8 @@
   $primary: mat.get-color-from-palette($primary-palette, main);
   $accent: mat.get-color-from-palette($accent-palette, main);
 
-  .info-card {
+  .info-card-left,
+  .info-card-right {
     background-color: $accent;
     @include mat.elevation(4, $primary, 0.8);
   }
