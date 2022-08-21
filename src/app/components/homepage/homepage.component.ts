@@ -9,6 +9,10 @@ import {Component} from '@angular/core';
  * HomepageComponent
  */
 export class HomepageComponent {
+  educationDescription: string = 'virginia tech';
+  lockheedMartinDescription: string = 'lockheed martin';
+  geekSquadDescription: string = 'geek squad';
+
   /**
    * constructor
    */
