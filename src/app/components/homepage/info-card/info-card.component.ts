@@ -9,12 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
  * InfoCardComponent
  */
 export class InfoCardComponent implements OnInit {
-  @Input() position: string = 'left';
+  CARD_STYLE_PREFIX: string = 'info-card-';
+  IMAGE_STYLE_PREFIX: string = 'image-';
+  LEFT: string = 'left';
+  RIGHT: string = 'right';
+  @Input() cardPosition: string = this.LEFT;
   @Input() title: string = 'Title';
   @Input() description: string = 'Description';
-  LEFT_STYLE: string = 'info-card-left';
-  RIGHT_STYLE: string = 'info-card-right';
-  infoCardStyle: string = this.LEFT_STYLE;
+  infoCardStyle: string = this.CARD_STYLE_PREFIX + this.LEFT;
+  imageStyle: string = this.IMAGE_STYLE_PREFIX + this.RIGHT;
 
   /**
    * constructor
@@ -25,8 +28,9 @@ export class InfoCardComponent implements OnInit {
    * ngOnInit
    */
   ngOnInit(): void {
-    if (this.isPositionRight()) {
-      this.infoCardStyle = this.RIGHT_STYLE;
+    if (this.isCardPositionRight()) {
+      this.infoCardStyle = this.CARD_STYLE_PREFIX + this.RIGHT;
+      this.imageStyle = this.IMAGE_STYLE_PREFIX + this.LEFT;
     }
   }
 
@@ -34,7 +38,7 @@ export class InfoCardComponent implements OnInit {
    * Check if position is right
    * @return {boolean} true is position is right
    */
-  isPositionRight(): boolean {
-    return this.position === 'right';
+  isCardPositionRight(): boolean {
+    return this.cardPosition === 'right';
   }
 }
