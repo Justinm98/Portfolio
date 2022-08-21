@@ -11,9 +11,4 @@ on:
 
 jobs:
   angular-full:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - uses: ./.github/workflows/angular.yml
+    uses: ./.github/workflows/angular.yml
