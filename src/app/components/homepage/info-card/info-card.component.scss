@@ -1,37 +1,7 @@
 @use '@angular/material' as mat;
 
 .container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  .info-card-left, .info-card-right {
-    grid-row: 0 / 1;
-    margin: 20px 0;
-    padding: 10px;
-    height: 200px;
-    width: 100%;
-  }
-
-  .info-card-left {
-    grid-column: 0 / 1;
-    border-radius: 0 25px 25px 0;
-  }
-
-  .info-card-right {
-    grid-column: 1 / 2;
-    border-radius: 25px 0 0 25px;
-  }
-
-  .image-left, .image-right {
-    grid-row: 0 / 1;
-    height: 200px;
-  }
-
-  .image-left {
-    grid-column: 0 / 1;
-  }
-
-  .image-right {
-    grid-column: 1 / 2;
-  }
+  padding: 10px;
+  height: 250px;
+  border-radius: 25px;
 }

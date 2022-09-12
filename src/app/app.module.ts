@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {HomepageComponent} from './components/homepage/homepage.component';
@@ -21,6 +22,7 @@ import {InfoCardComponent} from './components/homepage/info-card/info-card.compo
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatSidenavModule,
     MatToolbarModule,
   ],
   providers: [],

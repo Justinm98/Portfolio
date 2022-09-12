@@ -1,3 +1,24 @@
-.info-card {
-  margin: 1%;
+.container {
+  padding: 0 2%;
+
+  .card-left-image-right, .card-right-image-left {
+    padding: 50px 0;
+    display: grid;
+  }
+
+  .card-left-image-right {
+    grid-template-columns: 4fr 6fr;
+  }
+
+  .card-right-image-left {
+    grid-template-columns: 6fr 4fr;
+  }
+
+  .left {
+    grid-column: 1;
+  }
+
+  .right {
+    grid-column: 2;
+  }
 }
