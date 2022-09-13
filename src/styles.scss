@@ -7,6 +7,7 @@
 @use '@angular/material' as mat;
 
 // Custom component themes
+@use './app/app.component-theme' as appComponent;
 @use './app/components/homepage/info-card/info-card-theme' as infoCard;
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -239,6 +240,7 @@ $altTheme: (
 // Theme Init
 @include mat.all-component-themes($theme);
 @include infoCard.theme($theme);
+@include appComponent.theme($theme);
 
 .theme-alternate {
   @include mat.all-component-themes($altTheme);
@@ -273,5 +275,4 @@ $altTheme: (
 body {
   margin: 0;
   font-family: 'Roboto';
-  background: #1e1e2c;
 }
