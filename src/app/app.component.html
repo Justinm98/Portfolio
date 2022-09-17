@@ -1,15 +1,13 @@
-<div class="tool-bar">
-  <span>Ttest</span>
-  <button
-    mat-fab
-    color="primary"
-    class="theme-toggle-button"
-    (click)="switchTheme()"
-    matTooltip="Click to toggle theme">
+<mat-toolbar class="tool-bar">
+  <button mat-raised-button color="primary">Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="primary">Accent</button>
+  <button mat-raised-button color="primary">Warn</button>
+  <button mat-fab color="primary" class="theme-toggle-button" (click)="switchTheme()" matTooltip="Click to dark mode">
     <mat-icon *ngIf="isCurrentThemeDark()">dark_mode</mat-icon>
     <mat-icon *ngIf="isCurrentThemeLight()">light_mode</mat-icon>
   </button>
-</div>
+</mat-toolbar>
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>

@@ -1,11 +1,16 @@
 .tool-bar {
-  position: absolute;
-  grid-row: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  position: fixed;
+  background-color: transparent;
   padding: 10px;
 
   .theme-toggle-button {
-    margin-right: 0;
     margin-left: auto;
+    margin-right: 0;
   }
 }
 
