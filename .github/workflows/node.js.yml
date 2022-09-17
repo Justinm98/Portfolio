@@ -5,9 +5,9 @@ name: Angular CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   angular-full:
@@ -16,23 +16,23 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-    - uses: actions/checkout@v3
-    - name: cache
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - uses: actions/checkout@v3
+      - name: cache
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: install
-      run: |
-        npm ci
-        npm install -g @angular/cli
+      - name: install
+        run: |
+          npm install --global yarn
+          yarn install -g @angular/cli
 
-    - name: build
-      run: ng build --aot --optimization --progress=false
+      - name: build
+        run: ng build --aot --optimization --progress=false
 
-    - name: test
-      run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
+      - name: test
+        run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
 
-    - name: lint
-      run: ng lint
+      - name: lint
+        run: ng lint
