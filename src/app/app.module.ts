@@ -11,10 +11,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {HomepageComponent} from './components/homepage/homepage.component';
-import {InfoCardComponent} from './components/homepage/info-card/info-card.component';
+import {InfoCardComponent} from './components/common/info-card/info-card.component';
+import {ProjectPageComponent} from './components/project-page/project-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent, InfoCardComponent],
+  declarations: [AppComponent, HomepageComponent, InfoCardComponent, ProjectPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

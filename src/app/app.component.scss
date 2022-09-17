@@ -1,5 +1,14 @@
-@use '@angular/material' as mat;
-
 .tool-bar {
+  position: absolute;
+  grid-row: 1;
+  padding: 10px;
 
+  .theme-toggle-button {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.main-content {
+  height: 100vh;
 }

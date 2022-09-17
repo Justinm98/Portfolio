@@ -1,9 +1,15 @@
-<mat-toolbar class="tool-bar">
-  <button mat-fab color="primary" (click)="switchTheme()" matTooltip="Click to toggle theme">
+<div class="tool-bar">
+  <span>Ttest</span>
+  <button
+    mat-fab
+    color="primary"
+    class="theme-toggle-button"
+    (click)="switchTheme()"
+    matTooltip="Click to toggle theme">
     <mat-icon *ngIf="isCurrentThemeDark()">dark_mode</mat-icon>
     <mat-icon *ngIf="isCurrentThemeLight()">light_mode</mat-icon>
   </button>
-</mat-toolbar>
-<mat-sidenav-container>
+</div>
+<div class="main-content">
   <router-outlet></router-outlet>
-</mat-sidenav-container>
+</div>
