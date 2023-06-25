@@ -1,8 +1,11 @@
 <mat-toolbar class="tool-bar">
-  <button mat-raised-button color="primary">Basic</button>
-  <button mat-raised-button color="primary">Primary</button>
-  <button mat-raised-button color="primary">Accent</button>
-  <button mat-raised-button color="primary">Warn</button>
+  <button mat-raised-button color="primary" class="tool-bar-button">Home</button>
+  <button mat-raised-button color="primary" class="tool-bar-button">About</button>
+  <button mat-raised-button color="primary" class="tool-bar-button">Contact</button>
+  <button mat-raised-button color="primary" class="tool-bar-button">
+    <mat-icon inline="true">cloud_download</mat-icon>
+    Resume
+  </button>
   <button mat-fab color="primary" class="theme-toggle-button" (click)="switchTheme()" matTooltip="Click to dark mode">
     <mat-icon *ngIf="isCurrentThemeDark()">dark_mode</mat-icon>
     <mat-icon *ngIf="isCurrentThemeLight()">light_mode</mat-icon>
