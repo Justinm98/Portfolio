@@ -27,6 +27,7 @@ jobs:
         run: |
           npm install --global yarn
           yarn global add @angular/cli
+          yarn install
 
       - name: build
         run: ng build --aot --optimization --progress=false
