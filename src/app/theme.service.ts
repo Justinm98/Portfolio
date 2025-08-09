@@ -1,5 +1,5 @@
 // src/app/theme.service.ts
-import { Injectable, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID, signal } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 const THEME_KEY = 'theme';               // 'light' | 'dark'
@@ -10,11 +10,11 @@ export class ThemeService {
   private isBrowser = false;
   current = signal<'light' | 'dark'>('dark');
 
-  constructor(
-    @Inject(DOCUMENT) private doc: Document,
-    @Inject(PLATFORM_ID) platformId: object
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
+  private doc = inject(DOCUMENT);
+  private platformId: object = inject(PLATFORM_ID);
+
+  constructor() {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     const initial = this.readInitialPreference();
     this.apply(initial);
   }
@@ -30,7 +30,7 @@ export class ThemeService {
     if (!body) return;
     if (theme === 'light') body.classList.add(LIGHT_CLASS);
     else body.classList.remove(LIGHT_CLASS);
-    try { localStorage.setItem(THEME_KEY, theme); } catch {}
+    try { localStorage.setItem(THEME_KEY, theme); } catch { /* empty */ }
   }
 
   private readInitialPreference(): 'light' | 'dark' {

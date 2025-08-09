@@ -9,18 +9,30 @@ describe('App (zoneless)', () => {
   let component: App;
 
   beforeAll(() => {
-    // prefer dark by default
-    (globalThis as any).matchMedia = (q: string) => ({
-      matches: q.includes('prefers-color-scheme: light') ? false : true,
-      media: q, onchange: null, addListener: () => {}, removeListener: () => {},
-      addEventListener: () => {}, removeEventListener: () => {}, dispatchEvent: () => false
+    // Create a type-safe fake matchMedia
+    const fakeMatchMedia: typeof window.matchMedia = (query: string) => ({
+      matches: query.includes('prefers-color-scheme: light') ? false : true,
+      media: query,
+      onchange: null,
+      addListener: () => {}, // deprecated but some code may call it
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    });
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      configurable: true,
+      value: fakeMatchMedia,
     });
   });
 
 
+
   beforeEach(async () => {
     // Ensure deterministic theme before the service initializes
-    try { localStorage.removeItem('theme'); } catch {}
+    try { localStorage.removeItem('theme'); } catch { /* empty */ }
     document.body.classList.remove('theme-alternate');
 
     await TestBed.configureTestingModule({
@@ -35,7 +47,7 @@ describe('App (zoneless)', () => {
 
   afterEach(() => {
     // Extra safety to avoid leaking into the next spec
-    try { localStorage.removeItem('theme'); } catch {}
+    try { localStorage.removeItem('theme'); } catch { /* empty */ }
     document.body.classList.remove('theme-alternate');
   });
 
