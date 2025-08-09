@@ -7,8 +7,8 @@
     Resume
   </button>
   <button mat-fab color="primary" class="theme-toggle-button" (click)="switchTheme()" matTooltip="Click to dark mode">
-    <mat-icon *ngIf="isCurrentThemeDark()">dark_mode</mat-icon>
-    <mat-icon *ngIf="isCurrentThemeLight()">light_mode</mat-icon>
+    <mat-icon *ngIf="currentTheme() === 'dark'">dark_mode</mat-icon>
+    <mat-icon *ngIf="currentTheme() === 'light'">light_mode</mat-icon>
   </button>
 </mat-toolbar>
 <div class="main-content">

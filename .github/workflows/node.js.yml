@@ -14,20 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [24.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: cache
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
       - name: install
         run: |
-          npm install --global yarn
-          yarn global add @angular/cli
-          yarn install
+          npm install --global @angular/cli
+          npm install
 
       - name: build
         run: ng build --aot --optimization --progress=false
