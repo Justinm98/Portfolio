@@ -8,6 +8,16 @@ describe('App (zoneless)', () => {
   let fixture: ComponentFixture<App>;
   let component: App;
 
+  beforeAll(() => {
+    // prefer dark by default
+    (globalThis as any).matchMedia = (q: string) => ({
+      matches: q.includes('prefers-color-scheme: light') ? false : true,
+      media: q, onchange: null, addListener: () => {}, removeListener: () => {},
+      addEventListener: () => {}, removeEventListener: () => {}, dispatchEvent: () => false
+    });
+  });
+
+
   beforeEach(async () => {
     // Ensure deterministic theme before the service initializes
     try { localStorage.removeItem('theme'); } catch {}

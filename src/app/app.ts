@@ -34,6 +34,5 @@ export class App {
 
   switchTheme() {
     this.theme.toggle();
-    console.log(this.currentTheme.toString());
   }
 }
