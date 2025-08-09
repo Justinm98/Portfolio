@@ -23,8 +23,8 @@ describe('AppComponent', () => {
   });
 
   it('should default to the dark theme', fakeAsync(() => {
-    expect(component.isCurrentThemeDark()).toBeTrue();
-    expect(component.isCurrentThemeLight()).toBeFalse();
+    expect(component.currentTheme() === 'dark').toBeTrue();
+    expect(component.currentTheme() === 'light').toBeFalse();
   }));
 
   it('should switch the theme to light when you click the theme toggle button once', fakeAsync(() => {
@@ -40,12 +40,12 @@ describe('AppComponent', () => {
     const button = fixture.debugElement.query(By.css('.theme-toggle-button')).nativeElement;
     button.click();
     tick();
-    if (component.isCurrentThemeLight()) {
-      expect(component.isCurrentThemeDark()).toBeFalse();
-      expect(component.isCurrentThemeLight()).toBeTrue();
+    if (component.currentTheme() === 'dark') {
+      expect(component.currentTheme() === 'dark').toBeFalse();
+      expect(component.currentTheme() === 'light').toBeTrue();
     } else {
-      expect(component.isCurrentThemeDark()).toBeTrue();
-      expect(component.isCurrentThemeLight()).toBeFalse();
+      expect(component.currentTheme() === 'dark').toBeTrue();
+      expect(component.currentTheme() === 'light').toBeFalse();
     }
 
     button.click();
