@@ -1,19 +1,19 @@
 import {ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {AppComponent} from './app.component';
+import {App} from './app';
 import {By} from '@angular/platform-browser';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+  let component: App;
+  let fixture: ComponentFixture<App>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      declarations: [App],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(App);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
