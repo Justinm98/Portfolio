@@ -1,14 +1,36 @@
 <mat-toolbar class="tool-bar">
-  <button mat-raised-button color="primary" class="tool-bar-button">Home</button>
-  <button mat-raised-button color="primary" class="tool-bar-button">About</button>
-  <button mat-raised-button color="primary" class="tool-bar-button">Contact</button>
   <button mat-raised-button color="primary" class="tool-bar-button">
-    <mat-icon inline="true">cloud_download</mat-icon>
-    Resume
+    Home
   </button>
-  <button mat-fab color="primary" class="theme-toggle-button" (click)="switchTheme()" matTooltip="Click to dark mode">
-    <mat-icon *ngIf="currentTheme() === 'dark'">dark_mode</mat-icon>
-    <mat-icon *ngIf="currentTheme() === 'light'">light_mode</mat-icon>
+  <button mat-raised-button color="primary" class="tool-bar-button">
+    About
+  </button>
+  <button mat-raised-button color="primary" class="tool-bar-button">
+    Contact
+  </button>
+  <button mat-raised-button color="primary" class="tool-bar-button">
+    <mat-icon>cloud_download</mat-icon>
+    <a
+      href="resume.pdf"
+      target="_blank"
+      download="Justin_Maloney_Resume.pdf"
+      style="text-decoration: none; color: inherit"
+    >
+      Resume
+    </a>
+  </button>
+  <button
+    mat-fab
+    color="primary"
+    class="theme-toggle-button"
+    (click)="switchTheme()"
+    matTooltip="Click to dark mode"
+  >
+    @if (currentTheme() === "dark") {
+      <mat-icon>dark_mode</mat-icon>
+    } @else if (currentTheme() === "light") {
+      <mat-icon>light_mode</mat-icon>
+    }
   </button>
 </mat-toolbar>
 <div class="main-content">
