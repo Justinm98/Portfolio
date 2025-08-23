@@ -14,8 +14,8 @@ import { ThemeService } from './theme.service';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,        // for *ngIf, *ngFor, etc.
-    RouterOutlet,        // for <router-outlet>
+    CommonModule, // for *ngIf, *ngFor, etc.
+    RouterOutlet, // for <router-outlet>
     MatButtonModule,
     MatCardModule,
     MatIconModule,
