@@ -1,8 +1,35 @@
-@use '@angular/material' as mat;
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "theme" as app-theme;
 
-.info-card {
-  padding: 10px;
-  border-radius: 25px;
-  height: 100%;
-  width: 100%;
+@mixin info-card-theme($theme) {
+  $color-config: map.get($theme, color);
+  $accent-palette: map.get($color-config, accent);
+
+  $accent: mat.m2-get-color-from-palette($accent-palette, 200);
+  $on-accent: map.get(map.get($accent-palette, contrast), main);
+
+  .info-card {
+    background-color: $accent;
+    color: $on-accent;
+    border-radius: 25px;
+    padding: 20px;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+    font-size: xx-large;
+    @include mat.elevation(4);
+
+    .info-card-content {
+
+    }
+  }
+}
+
+/* Default dark theme */
+@include info-card-theme(app-theme.$dark-theme);
+
+/* Light theme when body has .theme-alternate */
+:host-context(body.theme-alternate) {
+  @include info-card-theme(app-theme.$light-theme);
 }
