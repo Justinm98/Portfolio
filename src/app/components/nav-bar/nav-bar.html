@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: center">
+  <rux-global-status-bar
+    include-icon="true"
+    app-domain="Portfolio"
+    app-name="Justin Maloney"
+    [attr.app-version]="appVersion"
+    menu-icon="public"
+    username="Software Engineer"
+    app-state-color="tag1"
+    [attr.app-state]="appState"
+  >
+    <div slot="right-side" class="nav-bar-buttons">
+      <rux-button class="icon-button">
+        <a (click)="goToLink(githubUrl)">
+          <img src="/svg/github.svg" alt="Github" />
+        </a>
+      </rux-button>
+      <rux-button class="icon-button">
+        <a (click)="goToLink(linkedInUrl)">
+          <img src="/svg/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </rux-button>
+      <rux-button icon="get-app" size="normal"> Resume </rux-button>
+    </div>
+  </rux-global-status-bar>
+</div>
