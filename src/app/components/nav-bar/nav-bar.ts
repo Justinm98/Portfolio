@@ -10,9 +10,9 @@ import pkg from '../../../../package.json';
 })
 export class NavBar {
   appVersion: string = pkg.version;
-  appState: string = 'Local-Development';
-  githubUrl: string = 'https://github.com/Justinm98';
-  linkedInUrl: string = 'https://www.linkedin.com/in/justin-maloney-59ba06192';
+  appState = 'Local-Development';
+  githubUrl = 'https://github.com/Justinm98';
+  linkedInUrl = 'https://www.linkedin.com/in/justin-maloney-59ba06192';
 
   constructor() {
     this.appState = isDevMode() ? 'Development' : 'Production';
