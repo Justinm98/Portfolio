@@ -1,6 +1,6 @@
 import { Component, isDevMode } from '@angular/core';
 import { RuxGlobalStatusBar, RuxButton } from '@astrouxds/angular';
-import { version } from '../../../../package.json';
+import pkg from '../../../../package.json';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +9,7 @@ import { version } from '../../../../package.json';
   styleUrl: './nav-bar.sass',
 })
 export class NavBar {
-  appVersion: string = version;
+  appVersion: string = pkg.version;
   appState: string = 'Local-Development';
   githubUrl: string = 'https://github.com/Justinm98';
   linkedInUrl: string = 'https://www.linkedin.com/in/justin-maloney-59ba06192';

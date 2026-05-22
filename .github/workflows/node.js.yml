@@ -32,7 +32,7 @@ jobs:
         run: ng build --aot --optimization --progress=false
 
       - name: test
-        run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
+        run: ng test --watch=false --code-coverage
 
       - name: lint
         run: ng lint
