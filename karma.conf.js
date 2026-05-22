@@ -26,6 +26,8 @@ module.exports = function (config) {
       ]
     },
 
+    browsers: ['ChromeHeadless'],
+
     restartOnFileChange: true
   });
 };
