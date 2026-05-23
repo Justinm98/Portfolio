@@ -1,10 +1,10 @@
 import { Component, isDevMode } from '@angular/core';
-import { RuxGlobalStatusBar, RuxButton } from '@astrouxds/angular';
+import { RuxGlobalStatusBar, RuxButton, RuxClock, RuxTabs, RuxTab } from '@astrouxds/angular';
 import pkg from '../../../../package.json';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [RuxGlobalStatusBar, RuxButton],
+  imports: [RuxGlobalStatusBar, RuxButton, RuxClock, RuxTabs, RuxTab],
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.sass',
 })

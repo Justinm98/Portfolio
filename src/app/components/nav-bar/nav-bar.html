@@ -9,7 +9,16 @@
     app-state-color="tag1"
     [attr.app-state]="appState"
   >
+    <div class="nav-bar-middle">
+      <rux-tabs id="tab-set-id-1">
+        <rux-tab id="tab-id-1" selected>About Me</rux-tab>
+        <rux-tab id="tab-id-2">Earth Dashboard</rux-tab>
+        <rux-tab id="tab-id-3">Projects</rux-tab>
+      </rux-tabs>
+    </div>
+
     <div slot="right-side" class="nav-bar-buttons">
+      <rux-clock hide-labels="true"></rux-clock>
       <rux-button class="icon-button">
         <a (click)="goToLink(githubUrl)">
           <img src="/svg/github.svg" alt="Github" />
